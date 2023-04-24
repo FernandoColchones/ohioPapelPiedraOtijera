@@ -1,11 +1,29 @@
 radio.onReceivedNumber(function (receivedNumber) {
     tool = randint(0, 2)
     if (tool == 0) {
-        basic.showIcon(IconNames.SmallSquare)
-    } else if (tool == 0) {
-        basic.showIcon(IconNames.Square)
+        basic.showLeds(`
+            . # # # .
+            . # # # .
+            . # # # .
+            . . # . .
+            . # # # .
+            `)
+    } else if (tool == 1) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . # .
+            . # # # .
+            # . . # .
+            `)
     } else {
-        basic.showIcon(IconNames.Scissors)
+        basic.showLeds(`
+            . # . . .
+            # # . . .
+            # # # # .
+            # # . . .
+            . # . . .
+            `)
     }
 })
 input.onGesture(Gesture.Shake, function () {
